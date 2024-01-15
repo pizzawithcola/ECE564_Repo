@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='rendered' last-migration='1020'>
+    <pages>
+        <page name='Overview and The Basics'/>
+        <page name='Operators, Strings, Characters, Collections'/>
+        <page name='Control Flow, Functions, Closures'/>
+        <page name='Enumerations, Structures, Classes, Properties, Methods'/>
+        <page name='Initializers, Protocols and More on Optionals'/>
+    </pages>
+</playground>
