@@ -6,5 +6,7 @@
         <page name='Control Flow, Functions, Closures'/>
         <page name='Enumerations, Structures, Classes, Properties, Methods'/>
         <page name='Initializers, Protocols and More on Optionals'/>
+        <page name='Final Topics'/>
+        <page name='Review'/>
     </pages>
 </playground>

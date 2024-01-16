@@ -28,6 +28,7 @@ import UIKit
  */
 let maximumNumberOfLoginAttempts = 10
 var welcomeMessage = "Hello"
+welcomeMessage = "Hi"
 //: * You can declare multiple constants or multiple variables on a single line, separated by commas:
  var x = 0.0, y = 0.0, z = 0.0
 //: ## Type Annotations
@@ -146,74 +147,8 @@ let hexiNum = 0xABD0
 let expoNum = 14.8e2
 //: * Lower case p for hexadecimal
 let hexExpNum = 0xFp2
-//:## Computed Variables
-//: * Variables can be
-//:*stored*
-//: or
-//:*computed*
-//: (
-//:`get`
-//: and
-//:`set` routines)
-//: * Stored variables can have
-//:*setter observers *
-//:`(`
-//:`willSet, didSet )`
-var now : String {
-    get {
-        return NSDate().description
-    }
-}
-print(now)
-
-struct lotsize {
-    var acres : Float
-    
-    init(acres: Float) {
-        self.acres = acres
-    }
-    var sqft : Float {
-        get {
-            return acres * (200*220)
-        }
-        set {
-            self.acres = newValue / (200*220)
-        }
-    }
-}
-
-var myLotSize = lotsize(acres: 3)
-
-print(myLotSize.sqft)
-
-myLotSize.sqft = 200000
-print(myLotSize.acres)
-myLotSize.acres = 10
-print(myLotSize.acres)
-print(myLotSize.sqft)
-/*:
- ### Setter Observers
- */
-var saveNew = ""
-var saveOld = ""
-var s: String = "whatever" {
-    willSet {
-        saveNew = newValue
-    }
-    didSet {
-        saveOld = oldValue
-        s = "override"
-    }
-}
-print(s)
-s = "Hello"
-print(s)
-
-/*:
- ## Optional
- You use *optionals* in situations where a value may be absent.  An optional represents two possibilities:  Either there is a value, and you can unwrap the optional to access that value, or there isn't a value at all.
- */
-
+//: ## Optional
+//: * You use *optionals* in situations where a value may be absent.  An optional represents two possibilities:  Either there is a value, and you can unwrap the optional to access that value, or there isn't a value at all.
 let convertedNumber = Int("123")
 print(convertedNumber as Any)
 let numj = convertedNumber!
