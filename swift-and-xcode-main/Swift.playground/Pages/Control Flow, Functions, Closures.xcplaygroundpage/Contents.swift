@@ -9,6 +9,7 @@ var test3 = 0
 for index in 1...10 {
     test3 = 5 + index
 }
+
 //: * if you don’t need the value, you can use underscore
 for _ in 1...4 {
         
@@ -104,7 +105,7 @@ while xx < 10 {
 var limit = 0
 var dieRoll = 0
 while limit < 70 {
-    dieRoll = Int(arc4random())// % 6 + 1
+    dieRoll = Int(arc4random()) % 6 + 1
     limit += dieRoll
 }
 //:### repeat-while
@@ -146,7 +147,16 @@ if numRolls < 20
 //: * `fallthrough` - used in switch statements to fall into next case
 //: * `return` - occurs in the body of a function or method definition and causes program execution to return to the calling function or method
 //: * `throw` - occurs in the body of a throwing function or method, or in the body of a closure expression whose type is marked with the `throws` keyword. A `throw` statement causes a program to end execution of the current scope and begin error propagation to its enclosing scope. The error that’s thrown continues to propagate until it’s handled by a `catch` clause of a `do` statement.
-
+let testcase = 1
+switch testcase {
+case 1:
+//    print("it is 1")
+    fallthrough
+case 2:
+    print("it is 2")
+case _:
+    print("it is others")
+}
 /*:
  # Closures
 
@@ -162,7 +172,8 @@ if numRolls < 20
 //:## Global Functions
 //: * A function is a self-contained chunk of code to perform a specific task
 //:- Use `func` to declare a function. Call a function by following its name with a list of arguments in parentheses and separated by commas.
-func sayHi(personName: String) -> String { return "Hi"}
+func sayHi(personName: String) -> String { return "Hi, \(personName)!"}
+sayHi(personName: "Jamie")
 //: * return ends the `func`
 //: * Arguments / return value are not required
 //: * Each function parameter has both an argument label and a parameter name.
@@ -204,6 +215,7 @@ var getVal: (Int) -> Int = newOne
 //: * Function types can be used as parameter types for calls to other functions
 func callMe (getVal: (Int) -> Int) {}
 
+//greetPerson 调用了上面的方法
 func sayGreeting(greeting: String, person: String, greetPerson: (String, String) -> String) -> String {
     var tempstr = greetPerson("me", person) + "\n"
     tempstr += greeting
@@ -212,7 +224,7 @@ func sayGreeting(greeting: String, person: String, greetPerson: (String, String)
 sayGreeting(greeting: "Have a Nice Day!", person: "Ric", greetPerson: sayHello)
 sayGreeting(greeting: "Have a good evening", person: "Ric", greetPerson: sayBye)
 //: * Function types can be used as the return type of another function
-func boolToString (isOdd: Bool) -> () -> String {
+func boolToString1 (isOdd: Bool) -> () -> String {
     return {
         if isOdd == true {
             return "It is Odd"
@@ -221,8 +233,20 @@ func boolToString (isOdd: Bool) -> () -> String {
         }
     }
 }
-let result = boolToString(isOdd: false)
-result()
+let result1 = boolToString1(isOdd: false)
+result1()
+
+//等同于⬇️
+
+func boolToString2 (isOdd: Bool) -> String {
+    if isOdd == true {
+        return "It is Odd"
+    } else {
+        return "It is Even"
+    }
+}
+let result2 = boolToString2(isOdd: false)
+print(result2)
 //: * Functions can pass multiple return values in a tuple
 func minMax(array: [Int]) -> (min: Int, max: Int) {
     var currentMin = array[0]
@@ -256,6 +280,8 @@ nameMaker(firstName: "Ric", lastName: "Telford")
 * Write variadic parameters by inserting three periods (…) after the parameters **type name**
 * A function can have only one variadic parameter and it must be last
 */
+// variadic: 可变参数，可接受不定数量的参数=
+
 func arithmeticMean(_ numbers: Double...) -> Double {
     var total: Double = 0
     for number in numbers {

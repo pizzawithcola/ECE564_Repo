@@ -137,7 +137,7 @@ enum Nums: Int {
     case dos
     case tres
 }
-let spNum = Nums.dos
+let spNum = Nums.uno
 print (spNum.rawValue)
 
 

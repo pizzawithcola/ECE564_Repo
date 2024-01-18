@@ -31,6 +31,8 @@ let ordinal = Int(5.423234)
 //: And there are a few others as well, including one that takes a string and then a radix parm.  This returns an Optional as well.
 let base10 = Int("5", radix: 10)
 print(base10 ?? "It failed")
+let base2 = Int("10100", radix: 2)
+print(base2 ?? "It failed")
 //: OK, so that is a simple example of initializers and hopefully you get the idea that any object type can have any number of initializers.  When you use an iOS class for example, you should always study what the syntax is for the various initializers so you know how to create an instance of that class.  Here is just one example.  There are a few ways to initialize the NSDate objects.  The default one of course, and then there is an example where you can pass it a Double (which is an NSTimeInterval in seconds) and a sinceDate and it creates an NSDate instance of that date/time.  You can always Command-click or Option-click on the name of the object type to see the header info or class reference, respectively.
 let dateParm = NSDate()
 let date = NSDate(timeInterval: 113343.33498, since: dateParm as Date)

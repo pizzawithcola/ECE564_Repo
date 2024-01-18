@@ -49,6 +49,7 @@ if fido === max {
  */
 let defaultColor = "black"
 //: Note: `userColor` is defined as an Optional without setting a value
+// ?? is useful for user customize setting such as avatar
 var userColor: String?
 var setColor = userColor ?? defaultColor
 //: Now let's set userColor to a value
@@ -214,7 +215,8 @@ let cnt = MyArray.count
 //: * Create an empty array using initializer syntax
 var someInts = [Int]()
 //: * Initiate an array with values using initializer syntax
-var someMoreInts = [Int](repeating: 5, count: 5)
+// create and initiate certain length of array
+var someMoreInts = [Int](repeating: 1, count: 5)
 //: ### Examples - Arrays
 var students = Array<String>()    // initialize an empty Array
 students = ["Joe", "Jack", "Josh", "Fred"]
