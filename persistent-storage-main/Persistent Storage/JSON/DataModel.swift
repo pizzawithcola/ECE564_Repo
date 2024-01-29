@@ -8,6 +8,7 @@
 import UIKit
 
 class ToDoList {
+    //static: the property of the class
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let shared = ToDoList()
 

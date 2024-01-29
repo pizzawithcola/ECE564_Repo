@@ -102,6 +102,8 @@ class ViewController: UIViewController {
         outputView.backgroundColor = .yellow
         outputView.alpha = 0.8
         view.addSubview(outputView)
+        
+        var p = Person(name:"Hugo")
     }
     
     @objc func buttonPressed(_ sender: AnyObject){
