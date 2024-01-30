@@ -1,0 +1,14 @@
+{
+  "images" : [
+    {
+      "filename" : "satellite-dish-310868_1920.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
