@@ -127,8 +127,8 @@
 		18C947802AA68C6F001DDB20 /* SimpleSave */ = {
 			isa = PBXGroup;
 			children = (
-				18C947812AA68C6F001DDB20 /* SimpleSaveVC.xib */,
 				18C947822AA68C6F001DDB20 /* SimpleSaveVC.swift */,
+				18C947812AA68C6F001DDB20 /* SimpleSaveVC.xib */,
 			);
 			path = SimpleSave;
 			sourceTree = "<group>";

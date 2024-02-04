@@ -33,6 +33,7 @@ passMeSomethingToDo()
 
 //:  ### Completion handler
 //: A closure that gets passed to a function as an argument and then called when that function is *done*.  Uncomment the line below to see an example of this.
+// Note: completionHandler is to execute some code when the function complete to inform others
 // let task = URLSession.shared.dataTask(with: <#T##URLRequest#>, completionHandler: <#T##(Data?, URLResponse?, Error?) -> Void#>)
 //:    Most of the time you will write this type of call using a **trailing closure**, like this:
 let urlReq = URLRequest(url: URL(string: "https://duke.edu")!)
