@@ -36,6 +36,7 @@ class HTTPDownloadVC: UIViewController, URLSessionDownloadDelegate {
         addbutton()
         
         switch httpType {
+            
         case .completion:
             let url = URL(string: httpString)
             let session = URLSession.shared
