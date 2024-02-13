@@ -109,6 +109,8 @@ struct ContentView: View {
     }
 }
 
+
+// This is why we have the live view on the right
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(saveTasks: {})
