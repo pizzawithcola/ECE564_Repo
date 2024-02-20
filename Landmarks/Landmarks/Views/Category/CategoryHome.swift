@@ -25,22 +25,20 @@ struct CategoryHome: View {
                     CategoryRow(categoryName: key, items: modelData.categories[key]!)
                 }
                 .listRowInsets(EdgeInsets())
-        }
-        .listStyle(.inset)
-        .navigationTitle("Featured")
-            
-        .toolbar {
-            Button {
-                showingProfile.toggle()
-            } label: {
-                Label("User Profile", systemImage: "person.crop.circle")
             }
-        }
-        .sheet(isPresented: $showingProfile) {
-            ProfileHost()
-                .environment(modelData)
-        }
-                    
+            .listStyle(.inset)
+            .navigationTitle("Featured")
+            .toolbar {
+                Button {
+                    showingProfile.toggle()
+                } label: {
+                    Label("User Profile", systemImage: "person.crop.circle")
+                }
+            }
+            .sheet(isPresented: $showingProfile) {
+                ProfileHost()
+                    .environment(modelData)
+            }
         } detail: {
             Text("Select a Landmark")
         }
