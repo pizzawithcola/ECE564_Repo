@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Maps-->
+        <scene sceneID="jlv-dF-35h">
+            <objects>
+                <viewController id="Msz-xF-em5" customClass="MapsViewController" customModule="_3_Frameworks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1WM-cG-tHa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grF-Qq-FHp">
+                                <rect key="frame" x="118" y="538" width="139" height="30"/>
+                                <state key="normal" title="Show in Apple Maps"/>
+                                <connections>
+                                    <action selector="showPOIinMapsApp:" destination="Msz-xF-em5" eventType="touchUpInside" id="xc9-hS-wMj"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VbZ-CV-5UR">
+                                <rect key="frame" x="10" y="91" width="355" height="427"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="S4k-Ll-bgZ">
+                                <rect key="frame" x="122" y="40" width="131" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segChanged:" destination="Msz-xF-em5" eventType="valueChanged" id="ZWN-iT-GaB"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pob-dI-oQA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VbZ-CV-5UR" firstAttribute="top" secondItem="S4k-Ll-bgZ" secondAttribute="bottom" constant="20" id="4cj-ay-lpm"/>
+                            <constraint firstItem="S4k-Ll-bgZ" firstAttribute="top" secondItem="pob-dI-oQA" secondAttribute="top" constant="20" id="C02-FC-XaE"/>
+                            <constraint firstItem="pob-dI-oQA" firstAttribute="bottom" secondItem="grF-Qq-FHp" secondAttribute="bottom" constant="50" id="MYq-CB-nP8"/>
+                            <constraint firstItem="grF-Qq-FHp" firstAttribute="centerX" secondItem="1WM-cG-tHa" secondAttribute="centerX" id="WDA-yD-Zj4"/>
+                            <constraint firstItem="VbZ-CV-5UR" firstAttribute="centerX" secondItem="1WM-cG-tHa" secondAttribute="centerX" id="Xzw-K5-HZf"/>
+                            <constraint firstItem="VbZ-CV-5UR" firstAttribute="leading" secondItem="pob-dI-oQA" secondAttribute="leading" constant="10" id="eOR-4Q-C4k"/>
+                            <constraint firstItem="S4k-Ll-bgZ" firstAttribute="centerX" secondItem="1WM-cG-tHa" secondAttribute="centerX" id="jvf-nI-cV9"/>
+                            <constraint firstItem="grF-Qq-FHp" firstAttribute="top" secondItem="VbZ-CV-5UR" secondAttribute="bottom" constant="20" id="mrT-ZN-ue9"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Maps" image="map" catalog="system" id="fBG-Xq-0O7"/>
+                    <connections>
+                        <outlet property="map" destination="VbZ-CV-5UR" id="VPt-Rw-fNm"/>
+                        <outlet property="mapButton" destination="grF-Qq-FHp" id="wuR-6V-bJ3"/>
+                        <outlet property="seg" destination="S4k-Ll-bgZ" id="K0u-29-L06"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d7I-kt-cxH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712.8" y="-377.36131934032989"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="CalendarViewController" customModule="_3_Frameworks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HO-At-pzQ">
+                                <rect key="frame" x="37" y="81" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" Create Calendar  "/>
+                                <connections>
+                                    <action selector="createCalendar:" destination="9pv-A4-QxB" eventType="touchUpInside" id="0b0-5F-sn3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCc-FB-MpP">
+                                <rect key="frame" x="37" y="141" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" Create Event  "/>
+                                <connections>
+                                    <action selector="createSimpleEvent:" destination="9pv-A4-QxB" eventType="touchUpInside" id="igs-pc-TFg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7x-Fe-ksI">
+                                <rect key="frame" x="214" y="201" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" Edit Event VC  "/>
+                                <connections>
+                                    <action selector="editEvent:" destination="9pv-A4-QxB" eventType="touchUpInside" id="MOK-nf-Cxm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmx-n9-zgV">
+                                <rect key="frame" x="37" y="261" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" Search  "/>
+                                <connections>
+                                    <action selector="searchByRange:" destination="9pv-A4-QxB" eventType="touchUpInside" id="jLS-kb-WZN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZ0-mb-YD6">
+                                <rect key="frame" x="37" y="201" width="171" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" Create Recurring Event  "/>
+                                <connections>
+                                    <action selector="createRecurringEvent:" destination="9pv-A4-QxB" eventType="touchUpInside" id="uFd-E3-MmN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1N-Pf-Kgm">
+                                <rect key="frame" x="214" y="81" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" Calendar Picker  "/>
+                                <connections>
+                                    <action selector="deleteCalendar:" destination="9pv-A4-QxB" eventType="touchUpInside" id="aQ6-4A-9Dn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaL-Wd-qxB">
+                                <rect key="frame" x="214" y="141" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=" Event VC  "/>
+                                <connections>
+                                    <action selector="showEventUI:" destination="9pv-A4-QxB" eventType="touchUpInside" id="WEI-MX-Gq6"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="To get started, you need to press Create Calendar." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-1h-E42">
+                                <rect key="frame" x="10" y="301" width="355" height="358"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="ccal" destination="7HO-At-pzQ" id="UN5-0b-k0h"/>
+                        <outlet property="cevent" destination="DCc-FB-MpP" id="Z5k-wY-fbX"/>
+                        <outlet property="crevent" destination="yZ0-mb-YD6" id="r7N-FP-QuS"/>
+                        <outlet property="editevent" destination="c7x-Fe-ksI" id="31T-vL-wQP"/>
+                        <outlet property="eventvc" destination="vaL-Wd-qxB" id="Cet-92-3nP"/>
+                        <outlet property="pickcal" destination="k1N-Pf-Kgm" id="O11-Tu-tqv"/>
+                        <outlet property="searchcal" destination="Bmx-n9-zgV" id="tI7-GQ-9wz"/>
+                        <outlet property="textView" destination="0ul-1h-E42" id="lWG-vA-C9b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="-320.68965517241384"/>
+        </scene>
+        <!--Geolocation-->
+        <scene sceneID="AXl-JQ-Dj5">
+            <objects>
+                <viewController id="eML-0G-ubQ" customClass="GeolocationViewController" customModule="_3_Frameworks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="03V-jI-7Ex">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUA-OM-Utc">
+                                <rect key="frame" x="181" y="43" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show Address"/>
+                                <connections>
+                                    <action selector="reportAddress:" destination="eML-0G-ubQ" eventType="touchUpInside" id="pWY-GB-YDF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adv-Wz-ch6">
+                                <rect key="frame" x="146" y="307" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show in Maps"/>
+                                <connections>
+                                    <action selector="ShowInMaps:" destination="eML-0G-ubQ" eventType="touchUpInside" id="1G1-pl-K5N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuV-JX-DmM">
+                                <rect key="frame" x="23" y="43" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Where am I?"/>
+                                <connections>
+                                    <action selector="ShowInApp:" destination="eML-0G-ubQ" eventType="touchUpInside" id="LlL-0X-QOf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7My-Dl-0TL">
+                                <rect key="frame" x="23" y="65" width="124" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Closest Thai Food"/>
+                                <connections>
+                                    <action selector="thaiFoodNearMapLocation:" destination="eML-0G-ubQ" eventType="touchUpInside" id="L5r-y2-kS0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4W-Il-FSX">
+                                <rect key="frame" x="181" y="65" width="175" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Directions to Thai Food"/>
+                                <connections>
+                                    <action selector="directionsToThaiFood:" destination="eML-0G-ubQ" eventType="touchUpInside" id="ySh-k2-A2R"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Agg-Kh-HZc">
+                                <rect key="frame" x="23" y="345" width="333" height="241"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ULZ-rE-cnt">
+                                <rect key="frame" x="43" y="103" width="288" height="196"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DF9-bk-bBq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Geolocation" image="mappin.and.ellipse" catalog="system" id="A4q-pV-6Pg"/>
+                    <connections>
+                        <outlet property="directions" destination="Agg-Kh-HZc" id="tol-x3-ya2"/>
+                        <outlet property="map" destination="ULZ-rE-cnt" id="E4p-0q-myd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUn-0M-qKx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2522.4000000000001" y="375.56221889055473"/>
+        </scene>
+        <!--Contacts View Controller-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="ContactsViewController" customModule="_3_Frameworks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdf-Hj-2EN">
+                                <rect key="frame" x="148" y="114" width="79" height="30"/>
+                                <state key="normal" title="Find Myself"/>
+                                <connections>
+                                    <action selector="findMyself:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Ey6-Oq-ppe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNp-gb-KkT">
+                                <rect key="frame" x="142.5" y="194" width="90" height="30"/>
+                                <state key="normal" title="New Contact"/>
+                                <connections>
+                                    <action selector="doCreate:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Egb-iK-0Uv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adA-xQ-dOe">
+                                <rect key="frame" x="137" y="274" width="101" height="30"/>
+                                <state key="normal" title="Contact Picker"/>
+                                <connections>
+                                    <action selector="doPeoplePicker:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="xe8-3t-qGP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjU-c0-y14">
+                                <rect key="frame" x="129.5" y="354" width="116" height="30"/>
+                                <state key="normal" title="View Contact VC"/>
+                                <connections>
+                                    <action selector="doViewPerson:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="dzz-uu-1KC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTg-vU-IAw">
+                                <rect key="frame" x="130.5" y="434" width="114" height="30"/>
+                                <state key="normal" title="New Contact VC"/>
+                                <connections>
+                                    <action selector="doNewPerson:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="IkS-LC-h6y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgX-15-79R" userLabel="Display Person VC">
+                                <rect key="frame" x="109" y="494" width="156" height="30"/>
+                                <state key="normal" title="Display Person VC"/>
+                                <connections>
+                                    <action selector="doUnknownPerson:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="KPd-po-TP6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DTg-vU-IAw" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="3D7-BY-S1y"/>
+                            <constraint firstItem="adA-xQ-dOe" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="5RS-j8-ZsK"/>
+                            <constraint firstItem="PNp-gb-KkT" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="6rh-h6-r4A"/>
+                            <constraint firstItem="ZjU-c0-y14" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="8lM-cZ-BIW"/>
+                            <constraint firstItem="ZjU-c0-y14" firstAttribute="top" secondItem="adA-xQ-dOe" secondAttribute="bottom" constant="50" id="9x6-ut-Cpn"/>
+                            <constraint firstItem="DTg-vU-IAw" firstAttribute="centerX" secondItem="pdf-Hj-2EN" secondAttribute="centerX" id="JDb-Lk-V3W"/>
+                            <constraint firstItem="adA-xQ-dOe" firstAttribute="centerX" secondItem="pdf-Hj-2EN" secondAttribute="centerX" id="O2V-VX-rLy"/>
+                            <constraint firstItem="lgX-15-79R" firstAttribute="centerX" secondItem="pdf-Hj-2EN" secondAttribute="centerX" id="ON3-Fj-a0x"/>
+                            <constraint firstItem="DTg-vU-IAw" firstAttribute="top" secondItem="ZjU-c0-y14" secondAttribute="bottom" constant="50" id="UvK-xB-gw4"/>
+                            <constraint firstItem="pdf-Hj-2EN" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="50" id="VqR-fx-cEh"/>
+                            <constraint firstItem="ZjU-c0-y14" firstAttribute="centerX" secondItem="pdf-Hj-2EN" secondAttribute="centerX" id="dLe-Zl-dXs"/>
+                            <constraint firstItem="lgX-15-79R" firstAttribute="top" secondItem="DTg-vU-IAw" secondAttribute="bottom" constant="50" id="f9w-4b-mmv"/>
+                            <constraint firstItem="PNp-gb-KkT" firstAttribute="centerX" secondItem="pdf-Hj-2EN" secondAttribute="centerX" id="nrH-Vx-21P"/>
+                            <constraint firstItem="lgX-15-79R" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="rE4-E2-KBa"/>
+                            <constraint firstItem="adA-xQ-dOe" firstAttribute="top" secondItem="PNp-gb-KkT" secondAttribute="bottom" constant="50" id="tRz-W5-MTr"/>
+                            <constraint firstItem="pdf-Hj-2EN" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="xRE-R1-kt8"/>
+                            <constraint firstItem="PNp-gb-KkT" firstAttribute="top" secondItem="pdf-Hj-2EN" secondAttribute="bottom" constant="50" id="yoC-te-AuI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jIQ-Uh-tzz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1688.8" y="359.37031484257875"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Msz-xF-em5" kind="relationship" relationship="viewControllers" id="SSd-rF-25U"/>
+                        <segue destination="eML-0G-ubQ" kind="relationship" relationship="viewControllers" id="Jbw-Oh-gFP"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="5PM-UJ-x5Y" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Contacts-->
+        <scene sceneID="ZO6-yS-MvV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5PM-UJ-x5Y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Contacts" image="person" catalog="system" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hZd-RG-sCt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="Bhm-jZ-S96"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ita-ve-CDc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="mappin.and.ellipse" catalog="system" width="110" height="128"/>
+        <image name="person" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
